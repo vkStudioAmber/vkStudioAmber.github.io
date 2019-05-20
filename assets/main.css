@@ -1,0 +1,130 @@
+*{
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
+
+html{
+    text-align: center;
+    background-color: #F2F2F2;
+    color: #3F3F3F;
+}
+
+body{
+    margin:0 0 40px;
+    width:920px;
+    text-align:left;
+    display:inline-block;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+img{
+    vertical-align:top;
+}
+
+a{
+    color: #8899a6;
+    text-decoration: none;
+}
+
+.content a{
+    color: #6500CC !important;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+iframe{
+     vertical-align: top;
+     width: 100%;
+     border: 0;
+}
+
+td{
+    vertical-align: top;
+}
+
+/* banner */
+
+#mainHeader{
+    width: 920px;
+    height: 231px;
+    background: url("/assets/header920.png") no-repeat;
+    background-size: cover;
+}
+
+/* paginator */
+
+.pagination a, .pagination span {
+    padding: 7px 18px;
+    border: 1px solid #eee;
+    margin-left: -2px;
+    margin-right: -2px;
+    background-color: #ffffff;
+    display: inline-block;
+}
+
+.pagination a {
+    &:hover {
+        background-color: #f1f1f1;
+        color: #333;
+    }
+}
+
+.pagination {
+    text-align: center;
+}
+
+/* list */
+
+.post{
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.mposter{
+    max-height: 320px;
+}
+
+.mcontent{
+    padding: 15px;
+}
+
+.mcontent .title{
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.mcontent .genres,
+.mcontent .year,
+.mcontent .description{
+    padding-top: 10px;
+}
+
+.mcontent .genres span{
+    background-color: #00bfff;
+    color: white;
+    padding: 0 3px 0 3px;
+    margin-right: 5px;
+}
+
+#ptitle, noscript #warn_player{
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#select{
+    margin-bottom: 5px;
+}
+
+#select select{
+    margin-right: 5px;
+}
+
+#player,#player iframe{
+    height: 518px;
+}

@@ -1,0 +1,38 @@
+---
+layout:   default
+---
+
+<!-- pagination links -->
+{% include pages.html %}
+
+<!-- posts -->
+<div>
+    {% for post in paginator.posts %}
+    <div class="post"><table><tr>
+        <td><img class="mposter" src="{{ post.poster }}"
+                style="width:{{ post.poster_size.width }};height:{{ post.poster_size.height }};"/></td>
+        <td>
+            <div class="mcontent">
+                <div class="title">
+                    <a href="{{ post.url }}">{{ post.title }} [{{ post.episodes }}]</a>
+                </div>
+                <div class="title-jp">
+                    <span>{{ post.title_jp }}</span>
+                </div>
+                <div class="genres">
+                    {% for g in post.genres %}<span>{{ g }}</span>{% endfor %}
+                </div>
+                <div class="year">
+                    <span>Год выпуска: {{ post.year }}</span>
+                </div>
+                <div class="description">
+                    {{ post.description }}
+                </div>
+            </div>
+        </td>
+    </tr></table></div>
+    {% endfor %}
+</div>
+
+<!-- pagination links -->
+{% include pages.html %}
