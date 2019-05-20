@@ -116,6 +116,10 @@ td{
     margin-right: 5px;
 }
 
+.mcontent .description {
+    text-align: justify;
+}
+
 #ptitle, noscript #warn_player{
     margin: 5px;
     padding: 5px;
