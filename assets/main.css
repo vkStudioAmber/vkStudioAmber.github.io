@@ -135,6 +135,7 @@ td{
     margin-right: 5px;
 }
 
-#player,#player iframe{
+#player, #player iframe{
     height: 518px;
+    display: block;
 }
