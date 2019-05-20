@@ -84,7 +84,13 @@ td{
     border-radius: 5px;
 }
 
+.post .poster_cell{
+    width: 250px;
+    text-align: center;
+}
+
 .mposter{
+    max-width: 250px;
     max-height: 320px;
 }
 

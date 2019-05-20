@@ -9,8 +9,10 @@ layout:   default
 <div>
     {% for post in paginator.posts %}
     <div class="post"><table><tr>
-        <td><img class="mposter" src="{{ post.poster }}"
-                style="width:{{ post.poster_size.width }};height:{{ post.poster_size.height }};"/></td>
+        <td class="poster_cell">
+            <img class="mposter" src="{{ post.poster }}"
+                style="width:{{ post.poster_size.width }};height:{{ post.poster_size.height }};"/>
+        </td>
         <td>
             <div class="mcontent">
                 <div class="title">
