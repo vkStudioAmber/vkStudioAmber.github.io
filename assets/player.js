@@ -22,7 +22,7 @@ function getPlayer (type, episode){
         pltype.value = p;
         pltype.text = p;
         if(p==type){
-            pltype.selected = "selected";
+            pltype.setAttribute('selected', 'selected');
         }
         plt.appendChild(pltype);
     }
@@ -36,7 +36,7 @@ function getPlayer (type, episode){
         plep.value = e;
         plep.text = series[type][e].title;
         if(plep.text == episode.title){
-            plep.selected = "selected";
+            plep.setAttribute('selected', 'selected');
         }
         ple.appendChild(plep);
     }
