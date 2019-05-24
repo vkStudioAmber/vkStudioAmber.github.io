@@ -15,4 +15,3 @@ markdown: kramdown
 permalink: /post/:title
 plugins:
   - jekyll-paginate
-  - jekyll-feed

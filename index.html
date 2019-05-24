@@ -2,7 +2,6 @@
 layout:   default
 ---
 
-<!-- pagination links -->
 {% include pages.html %}
 
 <!-- posts -->
@@ -20,9 +19,9 @@ layout:   default
                 <div class="mcontent__title-jp">
                     <span>{{ post.title_jp }}</span>
                 </div>
-				<div class="mcontent__episodes">
-					Готово серий: <b>{{ post.episodes }}</b>
-				</div>
+                <div class="mcontent__episodes">
+                    Готово серий: <b>{{ post.episodes }}</b>
+                </div>
                 <div class="mcontent__description">
                     {{ post.description }}
                 </div>
@@ -37,5 +36,4 @@ layout:   default
     {% endfor %}
 </div>
 
-<!-- pagination links -->
 {% include pages.html %}
