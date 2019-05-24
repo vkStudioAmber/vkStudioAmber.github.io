@@ -43,6 +43,7 @@ function getPlayer (type, episode){
     document.querySelector("#select").appendChild(ple);
     var plframe = document.createElement("iframe");
     plframe.src = episode.url;
+    plframe.setAttribute('allowFullScreen', 'true');
     document.querySelector("#player").appendChild(plframe);
     return;
 }
