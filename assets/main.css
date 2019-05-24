@@ -6,7 +6,7 @@ html, body {
 body { 
 	font: 1em/1.4 sans; 
 	color:#fff; 
-	background:url(img/bg.jpg) no-repeat 50% 50%; 
+	background:url(img/bg.jpg) 50% 50% #1c111b; 
 	background-size:cover;
 	background-attachment:fixed;
 	cursor:default;
@@ -130,7 +130,8 @@ a.mobile_link:hover {background:rgba(255,255,255,0.1);}
   .mcontent { flex:2 2 0; max-width:600px; }
   .post { flex:0 1 700px; margin:0 auto;  }
   a.mobile_link { display:none; }
-	.player_aspectratio {
-		width:85%;
+	#player_container {
+		margin-left:30px;
+		margin-right:30px;
 	}
 }
