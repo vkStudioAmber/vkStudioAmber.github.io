@@ -3,12 +3,15 @@ html, body {
 	height: 100%;
 }
 
-body { 
-	font: 1em/1.4 sans; 
-	color:#fff; 
+html {
 	background:url(img/bg.jpg) 50% 50% #1c111b; 
 	background-size:cover;
 	background-attachment:fixed;
+}
+
+body { 
+	font: 1em/1.4 sans; 
+	color:#fff; 
 	cursor:default;
     display: flex;
     flex-direction: column;
