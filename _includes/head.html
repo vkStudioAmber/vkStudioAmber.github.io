@@ -8,7 +8,11 @@
 	
 	<meta property="og:title" content="{{ site.title }}{% if page.title %} — {{ page.title }}{% endif %}">
 	<meta property="og:description" content="Русская профессиональная озвучка">
-	<meta property="og:image" content="{% if post.poster %}/assets/posters/{{ post.poster }}{% else %}/assets/header.png{% endif %}"> 
+	<meta property="og:image" content="{% if page.poster %}/assets/posters/{{ page.poster }}{% else %}/assets/header.png{% endif %}"> 
+	
+	<meta name="twitter:title" content="{{ site.title }}{% if page.title %} — {{ page.title }}{% endif %}">
+	<meta name="twitter:description" content="Русская профессиональная озвучка">
+	<meta name="twitter:image" content="{% if page.poster %}/assets/posters/{{ page.poster }}{% else %}/assets/header.png{% endif %}"> 
 	
     <title>{{ site.title }}{% if page.title %} » {{ page.title }}{% endif %}</title>
 
