@@ -10,7 +10,7 @@ layout:   default
     <div class="post">
         <a class="mobile_link" href="{{ post.url }}"></a>
         <div class="poster_cell">
-            <a href="{{ post.url }}"><img class="mposter" src="{{ post.poster }}" /></a>
+            <a href="{{ post.url }}"><img class="mposter" src="/assets/posters/{{ post.poster }}" /></a>
         </div>
         <div class="mcontent">
                 <div class="mcontent__title">
@@ -20,7 +20,7 @@ layout:   default
                     <span>{{ post.title_jp }}</span>
                 </div>
                 <div class="mcontent__episodes">
-                    Готово серий: <b>{{ post.episodes }}</b>
+                    <span>Готово серий: <b>{{ post.episodes }}</b></span>
                 </div>
                 <div class="mcontent__description">
                     {{ post.description }}
