@@ -1,3 +1,6 @@
+*{
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
 
 html, body {
 	min-height: 100vh;
