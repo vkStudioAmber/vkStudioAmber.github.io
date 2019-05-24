@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-24T07:32:42+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Amber. Студия профессионального озвучивания</title><entry><title type="html">Сворд Арт Онлайн: Алисизация</title><link href="http://localhost:4000/post/sao-alicization" rel="alternate" type="text/html" title="Сворд Арт Онлайн: Алисизация" /><published>2019-05-23T00:00:00+03:00</published><updated>2019-05-23T00:00:00+03:00</updated><id>http://localhost:4000/post/sao-alicization</id><content type="html" xml:base="http://localhost:4000/post/sao-alicization">&lt;script&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-24T07:49:31+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Amber. Студия профессионального озвучивания</title><entry><title type="html">Кэрол и Тьюсдэй</title><link href="http://localhost:4000/post/carole-and-tuesday" rel="alternate" type="text/html" title="Кэрол и Тьюсдэй" /><published>2019-05-24T00:00:00+03:00</published><updated>2019-05-24T00:00:00+03:00</updated><id>http://localhost:4000/post/carole-and-tuesday</id><content type="html" xml:base="http://localhost:4000/post/carole-and-tuesday">&lt;script&gt;
+    var series = {
+        sibnet: [
+            { &quot;title&quot;: &quot;первая серия&quot;, &quot;url&quot;: &quot;https://video.sibnet.ru/shell.php?videoid=3612814&quot; },
+        ],
+        kodik: [
+            { &quot;title&quot;: &quot;вторая серия&quot;, &quot;url&quot;: &quot;https://kodikdb.com/uv/9250/128be3bb6dc9ec09a298/720p&quot; },
+        ],
+    };
+&lt;/script&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Сворд Арт Онлайн: Алисизация</title><link href="http://localhost:4000/post/sao-alicization" rel="alternate" type="text/html" title="Сворд Арт Онлайн: Алисизация" /><published>2019-05-23T00:00:00+03:00</published><updated>2019-05-23T00:00:00+03:00</updated><id>http://localhost:4000/post/sao-alicization</id><content type="html" xml:base="http://localhost:4000/post/sao-alicization">&lt;script&gt;
     var series = {
         kodik: [
             { &quot;title&quot;: &quot;пятая серия&quot;, &quot;url&quot;: &quot;https://kodikdb.com/uv/9241/b6723ae5cbe4b6582fe6/720p&quot; },
@@ -18,12 +27,6 @@
         sibnet: [
             { &quot;title&quot;: &quot;часть 1&quot;, &quot;url&quot;: &quot;https://video.sibnet.ru/shell.php?videoid=3614539&quot; },
             { &quot;title&quot;: &quot;часть 2&quot;, &quot;url&quot;: &quot;https://video.sibnet.ru/shell.php?videoid=3614558&quot; },
-        ],
-    };
-&lt;/script&gt;</content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Кэрол и Тьюсдэй</title><link href="http://localhost:4000/post/carole-and-tuesday" rel="alternate" type="text/html" title="Кэрол и Тьюсдэй" /><published>2019-05-15T00:00:00+03:00</published><updated>2019-05-15T00:00:00+03:00</updated><id>http://localhost:4000/post/carole-and-tuesday</id><content type="html" xml:base="http://localhost:4000/post/carole-and-tuesday">&lt;script&gt;
-    var series = {
-        sibnet: [
-            { &quot;title&quot;: &quot;первая серия&quot;, &quot;url&quot;: &quot;https://video.sibnet.ru/shell.php?videoid=3612814&quot; },
         ],
     };
 &lt;/script&gt;</content><author><name></name></author><summary type="html"></summary></entry></feed>
