@@ -121,7 +121,7 @@ a.mobile_link:hover {background:rgba(255,255,255,0.1);}
 	vertical-align:top;
 	display:block;
 	margin:0 auto;
-	opacity:0;
+	opacity:0.5;
 }
 
 .social {
