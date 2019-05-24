@@ -6,33 +6,34 @@ layout:   default
 {% include pages.html %}
 
 <!-- posts -->
-<div>
+<div class="post_container">
     {% for post in paginator.posts %}
-    <div class="post"><table><tr>
-        <td class="poster_cell">
-            <img class="mposter" src="{{ post.poster }}"
-                style="width:{{ post.poster_size.width }};height:{{ post.poster_size.height }};"/>
-        </td>
-        <td>
-            <div class="mcontent">
-                <div class="title">
-                    <a href="{{ post.url }}">{{ post.title }} [{{ post.episodes }}]</a>
+    <div class="post">
+        <a class="mobile_link" href="{{ post.url }}"></a>
+        <div class="poster_cell">
+            <a href="{{ post.url }}"><img class="mposter" src="{{ post.poster }}" /></a>
+        </div>
+        <div class="mcontent">
+                <div class="mcontent__title">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
                 </div>
-                <div class="title-jp">
+                <div class="mcontent__title-jp">
                     <span>{{ post.title_jp }}</span>
                 </div>
-                <div class="genres">
-                    {% for g in post.genres %}<span>{{ g }}</span>{% endfor %}
-                </div>
-                <div class="year">
-                    <span>Год выпуска: {{ post.year }}</span>
-                </div>
-                <div class="description">
+				<div class="mcontent__episodes">
+					Готово серий: <b>{{ post.episodes }}</b>
+				</div>
+                <div class="mcontent__description">
                     {{ post.description }}
                 </div>
+                <div class="mcontent__year">
+                    <span>Год выпуска: {{ post.year }}</span>
+                </div>
+                <div class="mcontent__genres">
+                    {% for g in post.genres %}<span>{{ g }}</span>{% endfor %}
+                </div>
             </div>
-        </td>
-    </tr></table></div>
+        </div>
     {% endfor %}
 </div>
 

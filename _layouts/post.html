@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        {% include head.html %}
-    </head>
-    <body>
-        <header id="mainHeader"></header>
+{% include head.html %}
+
+<header id="mainHeader"><a href="/"></a><span class="logotext">Студия профессионального озвучивания</span></header>
+<div class="main_container">
         {{ content }}
         {% include post-content.html %}
-    </body>
-</html>
+</div>
+
+{% include footer.html %}
