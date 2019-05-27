@@ -138,6 +138,7 @@ a.mobile_link:hover {background:rgba(255,255,255,0.1);}
     display:block;
     margin:0 auto;
     opacity:0.75;
+    max-height:100vh;
 }
 
 .social {
@@ -244,7 +245,6 @@ a.mobile_link:hover {background:rgba(255,255,255,0.1);}
     .post-container {
         margin-left:8%;
         margin-right:8%;
-        max-height:100vh;
     }
   .video-select {
 	  margin-left:0;
