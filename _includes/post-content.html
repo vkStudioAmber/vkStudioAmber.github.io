@@ -10,15 +10,24 @@
     <div id="warn_player">Включите пожалуйста Javascript!</div>
 </noscript>
 
-<div id="select"></div>
-<div id="player_container">
-    <img class="player_aspectratio" src="/assets/img/16x9.png" alt=""/>
-    <div id="player"></div>
+<div class="post-container">
+	<ul class="video-select">
+		<li class="video-select__item">
+			<a href="#" class="link-button link-button_disabled video-select__link video-select__link_prev">Назад</a>
+		<li class="video-select__item">
+			<a href="#" class="link-button link-button_disabled video-select__link video-select__link_next">Вперёд</a>
+		<li class="video-select__item video-select__item_center">
+			<div id="select"></div>
+	</ul>
+	<div id="player_container">
+		<img class="player_aspectratio" src="/assets/img/16x9.png" alt=""/>
+		<div id="player"></div>
+	</div>
 </div>
 
 <script src="/assets/player.js">
 </script>
 
 <div class="post_footer">
-    <a href="/">На главную</a>
+    <a class="link-button" href="/">На главную</a>
 </div>
