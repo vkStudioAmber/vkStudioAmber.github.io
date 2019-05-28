@@ -1,8 +1,6 @@
 // set defaults
 var nextEp, prevEp,
     players = Object.keys(series);
-	cURL = location.pathname;
-	selectedPlayer = 0;
 // getPlayer
 function getPlayer (type, episode){
     // collect data
@@ -21,10 +19,9 @@ function getPlayer (type, episode){
     }
     // make new selection 1
     selPlayEl = document.createElement('select');
-	selectedPlayer = selPlayEl;
     selPlayEl.addEventListener('change',function(){ 
         getPlayer(players[this.selectedIndex]);
-		historyState(0,this.selectedIndex);
+        historyState(players[this.selectedIndex], 1);
     });
     for(var p of players){
         optPlayEl = document.createElement('option');
@@ -40,7 +37,7 @@ function getPlayer (type, episode){
     selPlayEl = document.createElement('select');
     selPlayEl.addEventListener('change',function(){ 
         getPlayer(type, this.selectedIndex);
-		historyState(this.selectedIndex,selectedPlayer.selectedIndex);
+        historyState(type, this.selectedIndex+1);
     });
     for(var e in series[type]){
         optPlayEl = document.createElement('option');
@@ -70,7 +67,7 @@ function getPlayer (type, episode){
         if(episode+1 < series[type].length){
             nextEp = function(){
                 getPlayer(type, episode+1);
-				historyState(episode+1,selectedPlayer.selectedIndex);
+                historyState(type, episode+2);
             };
             nextEpBtn.classList.remove('link-button_disabled');
             nextEpBtn.addEventListener('click', nextEp);
@@ -78,7 +75,7 @@ function getPlayer (type, episode){
         if(episode > 0){
             prevEp = function(){
                 getPlayer(type, episode-1);
-				historyState(episode-1,selectedPlayer.selectedIndex);
+                historyState(type, episode);
             };
             prevEpBtn.classList.remove('link-button_disabled');
             prevEpBtn.addEventListener('click', prevEp);
@@ -89,31 +86,28 @@ function getPlayer (type, episode){
     playerFrame.src = series[type][episode].url;
     playerFrame.setAttribute('allowFullScreen', 'true');
     playerEl.appendChild(playerFrame);
-
     return;
 }
 
-var historyState = function (episode, type) {	
-	var state = { 'ep': episode, 'pl': type };
-	window.history.pushState(state, null, cURL+'?player='+(state.pl)+'&video='+(state.ep+1));
+var historyState = function (type, video) {
+    state = { player: type, video: video };
+    window.history.pushState(state, null, location.pathname + '?' + new URLSearchParams(state).toString());
 }
 
+window.addEventListener('popstate', function(e) {
+    state = e.state ? e.state : { player: '', video: 1 };
+    getPlayer(state.player, state.video-1);
+});
+
 document.addEventListener('DOMContentLoaded',function(){
-    var videoPlayer = parseInt(new URLSearchParams(window.location.search).get('player'));
-	if (!videoPlayer) videoPlayer = 0;
-    var videoNumReq = parseInt(new URLSearchParams(window.location.search).get('video'));
-    if(videoNumReq && videoNumReq - 1 > 0 && videoNumReq - 1 < series[players[videoPlayer]].length){
+    var playerTypeReq  = new URLSearchParams(window.location.search).get('player');
+    playerTypeReq = players.indexOf(playerTypeReq) > -1 ? playerTypeReq : players[0];
+    var videoNumReq    = parseInt(new URLSearchParams(window.location.search).get('video'));
+    if(videoNumReq && videoNumReq - 1 > 0 && videoNumReq - 1 < series[players[0]].length){
         videoNumReq = videoNumReq - 1;
     }
     else{
         videoNumReq = 0;
     }
-    getPlayer(players[videoPlayer], videoNumReq);
-	var state = { 'ep': videoNumReq, 'pl': videoPlayer };
-	window.history.replaceState(state, null, cURL+'?player='+(state.pl)+'&video='+(state.ep+1));
-});
-
-window.addEventListener('popstate', function(e) {
-  var state = e.state;
-  getPlayer(players[state.pl], state.ep);
+    getPlayer(playerTypeReq, videoNumReq);
 });
