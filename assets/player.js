@@ -86,7 +86,8 @@ function getPlayer (type, episode){
     playerFrame.src = series[type][episode].url;
     playerFrame.setAttribute('allowFullScreen', 'true');
     playerEl.appendChild(playerFrame);
-    return;
+    // return data
+    return { player: type, video: episode+1 };
 }
 
 var historyState = function (type, video, func) {
@@ -104,12 +105,10 @@ document.addEventListener('DOMContentLoaded',function(){
     var playerTypeReq  = new URLSearchParams(window.location.search).get('player');
     playerTypeReq = players.indexOf(playerTypeReq) > -1 ? playerTypeReq : players[0];
     var videoNumReq    = parseInt(new URLSearchParams(window.location.search).get('video'));
-    if(videoNumReq && videoNumReq - 1 > 0 && videoNumReq - 1 < series[players[0]].length){
-        videoNumReq = videoNumReq - 1;
-    }
-    else{
-        videoNumReq = 0;
-    }
-    getPlayer(playerTypeReq, videoNumReq);
-    historyState(playerTypeReq, videoNumReq+1, 'replaceState');
+    videoNumReq = videoNumReq 
+        && videoNumReq > 0 
+        && videoNumReq - 1 < series[playerTypeReq].length 
+        ? videoNumReq : 1;
+    let curPageData = getPlayer(playerTypeReq, videoNumReq-1);
+    historyState(curPageData.player, curPageData.video, 'replaceState');
 });
