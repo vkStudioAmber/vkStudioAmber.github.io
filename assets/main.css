@@ -439,6 +439,11 @@ a.mobile_link:hover {
   .post-container_video {
     display: block;
   }
+  
+  .post-container_content {
+    margin-left:10%;
+    margin-right:10%;	
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -459,8 +464,11 @@ a.mobile_link:hover {
   }
 
   .post-container_content {
+    margin-left:10%;
+    margin-right:10%;	
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-    grid-gap: 10px;
+	justify-content:center;
+    grid-template-columns: repeat(auto-fit, minmax(500px, .8fr));
+    grid-gap: 2vw;
   }
 }
