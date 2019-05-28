@@ -1,7 +1,4 @@
 <div id="ptitle">
-    <!-- <span><a href="/">&laquo; На главную</a></span> -->
-    <!-- <span>&nbsp;&nbsp;&nbsp;</span> -->
-    <!-- <span> /  [{{ page.episodes }}]</span> -->
     <div class="title">{{ page.title }}</div>
     <div class="title_jp">{{ page.title_jp }}</div>
 </div>
@@ -11,18 +8,18 @@
 </noscript>
 
 <div class="post-container post-container_video">
-	<ul class="video-select">
-		<li class="video-select__item">
-			<span class="link-button link-button_disabled video-select__link video-select__link_prev">Назад</span>
-		<li class="video-select__item">
-			<span class="link-button link-button_disabled video-select__link video-select__link_next">Вперёд</span>
-		<li class="video-select__item video-select__item_center">
-			<div id="select"></div>
-	</ul>
-	<div id="player_container">
-		<img class="player_aspectratio" src="/assets/img/16x9.png" alt=""/>
-		<div id="player"></div>
-	</div>
+    <ul class="video-select">
+        <li class="video-select__item">
+            <span class="link-button link-button_disabled video-select__link video-select__link_prev">Назад</span>
+        <li class="video-select__item">
+            <span class="link-button link-button_disabled video-select__link video-select__link_next">Вперёд</span>
+        <li class="video-select__item video-select__item_center">
+            <div id="select"></div>
+    </ul>
+    <div id="player_container">
+        <img class="player_aspectratio" src="/assets/img/16x9.png" alt=""/>
+        <div id="player"></div>
+    </div>
 </div>
 
 <script src="/assets/player.js">
