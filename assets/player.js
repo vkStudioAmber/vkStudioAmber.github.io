@@ -89,9 +89,10 @@ function getPlayer (type, episode){
     return;
 }
 
-var historyState = function (type, video) {
+var historyState = function (type, video, func) {
     state = { player: type, video: video };
-    window.history.pushState(state, null, location.pathname + '?' + new URLSearchParams(state).toString());
+    func  = func ? func : 'pushState';
+    window.history[func](state, null, location.pathname + '?' + new URLSearchParams(state).toString());
 }
 
 window.addEventListener('popstate', function(e) {
@@ -110,4 +111,5 @@ document.addEventListener('DOMContentLoaded',function(){
         videoNumReq = 0;
     }
     getPlayer(playerTypeReq, videoNumReq);
+    historyState(playerTypeReq, videoNumReq+1, 'replaceState');
 });
