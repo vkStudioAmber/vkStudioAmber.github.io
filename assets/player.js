@@ -1,7 +1,9 @@
-var nextEp, prevEp;
+// set defaults
+var nextEp, prevEp,
+    players = Object.keys(series);
+// getPlayer
 function getPlayer (type, episode){
     // collect data
-    var players = Object.keys(series);
     type    = series[type]          ? type    : players[0];
     episode = series[type][episode] ? episode : 0;
     // predef
@@ -84,5 +86,12 @@ function getPlayer (type, episode){
 }
 
 document.addEventListener('DOMContentLoaded',function(){
-    getPlayer();
+    var videoNumReq = parseInt(new URLSearchParams(window.location.search).get('video'));
+    if(videoNumReq && videoNumReq - 1 > 0 && videoNumReq - 1 < series[players[0]].length){
+        videoNumReq = videoNumReq - 1;
+    }
+    else{
+        videoNumReq = 0;
+    }
+    getPlayer(players[0], videoNumReq);
 });
