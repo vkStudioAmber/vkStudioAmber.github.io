@@ -1,50 +1,85 @@
+var nextEp, prevEp;
 function getPlayer (type, episode){
+    // collect data
     var players = Object.keys(series);
-    type = series[type] ? type : players[0];
-    episode = series[type][episode] ? series[type][episode] : series[type][0];
-    var esh = document.querySelector("#select");
-    var esx = esh.lastElementChild;
-    while (esx) { 
-        esh.removeChild(esx); 
-        esx = esh.lastElementChild; 
+    type    = series[type]          ? type    : players[0];
+    episode = series[type][episode] ? episode : 0;
+    // predef
+    var selectEl = document.querySelector('#select');
+    var playerEl = document.querySelector('#player');
+    var selPlayEl, optPlayEl, playerFrame; 
+    // clean up elements
+    while (selectEl.firstChild) { 
+        selectEl.removeChild(selectEl.firstChild);
     }
-    var plh = document.querySelector("#player");
-    var pll = plh.lastElementChild;
-    if(pll){
-        plh.removeChild(pll);
+    while (playerEl.firstChild) { 
+        playerEl.removeChild(playerEl.firstChild);
     }
-    var plt = document.createElement("select");
-    plt.onchange = function(){
+    // make new selection 1
+    selPlayEl = document.createElement('select');
+    selPlayEl.addEventListener('change',function(){ 
         getPlayer(players[this.selectedIndex]);
-    }
+    });
     for(var p of players){
-        var pltype = document.createElement("option");
-        pltype.value = p;
-        pltype.text = p;
-        if(p==type){
-            pltype.setAttribute('selected', 'selected');
+        optPlayEl = document.createElement('option');
+        optPlayEl.value = p;
+        optPlayEl.text = p;
+        if(type == p){
+            optPlayEl.setAttribute('selected', 'selected');
         }
-        plt.appendChild(pltype);
+        selPlayEl.appendChild(optPlayEl);
     }
-    document.querySelector("#select").appendChild(plt);
-    var ple = document.createElement("select");
-    ple.onchange = function(){
+    selectEl.appendChild(selPlayEl);
+    // make new selection 2
+    selPlayEl = document.createElement('select');
+    selPlayEl.addEventListener('change',function(){ 
         getPlayer(type, this.selectedIndex);
-    }
+    });
     for(var e in series[type]){
-        var plep = document.createElement("option");
-        plep.value = e;
-        plep.text = series[type][e].title;
-        if(plep.text == episode.title){
-            plep.setAttribute('selected', 'selected');
+        optPlayEl = document.createElement('option');
+        optPlayEl.value = e;
+        optPlayEl.text  = series[type][e].title;
+        if(episode == e){
+            optPlayEl.setAttribute('selected', 'selected');
         }
-        ple.appendChild(plep);
+        selPlayEl.appendChild(optPlayEl);
     }
-    document.querySelector("#select").appendChild(ple);
-    var plframe = document.createElement("iframe");
-    plframe.src = episode.url;
-    plframe.setAttribute('allowFullScreen', 'true');
-    document.querySelector("#player").appendChild(plframe);
+    selectEl.appendChild(selPlayEl);
+    // next - prev
+    var nextEpBtn = document.querySelector('.video-select__link_next');
+    var prevEpBtn = document.querySelector('.video-select__link_prev');
+    if(nextEp){
+        nextEpBtn.removeEventListener('click', nextEp);
+        nextEpBtn.classList.add('link-button_disabled');
+    }
+    if(prevEp){
+        prevEpBtn.removeEventListener('click', prevEp);
+        prevEpBtn.classList.add('link-button_disabled');
+    }
+    // reset buttons function
+    nextEp = false, prevEp = false;
+    // make buttons
+    if(series[type].length > 1){
+        if(episode+1 < series[type].length){
+            nextEp = function(){
+                getPlayer(type, episode+1);
+            };
+            nextEpBtn.classList.remove('link-button_disabled');
+            nextEpBtn.addEventListener('click', nextEp);
+        }
+        if(episode > 0){
+            prevEp = function(){
+                getPlayer(type, episode-1);
+            };
+            prevEpBtn.classList.remove('link-button_disabled');
+            prevEpBtn.addEventListener('click', prevEp);
+        }
+    }
+    // add iframe
+    playerFrame = document.createElement('iframe');
+    playerFrame.src = series[type][episode].url;
+    playerFrame.setAttribute('allowFullScreen', 'true');
+    playerEl.appendChild(playerFrame);
     return;
 }
 
