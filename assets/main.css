@@ -11,6 +11,7 @@ html {
     background:url(img/bg.jpg) 50% 50% #1c111b; 
     background-size:cover;
     background-attachment:fixed;
+	min-width:320px;
 }
 
 body { 
