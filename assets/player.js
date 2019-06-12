@@ -113,5 +113,7 @@ document.addEventListener('DOMContentLoaded',function(){
         && videoNumReq - 1 < series[playerTypeReq].length 
         ? videoNumReq : 1;
     var curPageData = getPlayer(playerTypeReq, videoNumReq-1);
-    historyState(curPageData.player, curPageData.video, 'replaceState');
+    if(curPageData){
+        historyState(curPageData.player, curPageData.video, 'replaceState');
+    }
 });
