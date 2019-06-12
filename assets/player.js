@@ -6,6 +6,9 @@ function getPlayer (type, episode){
     // collect data
     type    = series[type]          ? type    : players[0];
     episode = series[type][episode] ? episode : 0;
+    if(!series[type][episode]){
+        return;
+    }
     // predef
     var selectEl = document.querySelector('#select');
     var playerEl = document.querySelector('#player');
