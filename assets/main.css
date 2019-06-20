@@ -222,10 +222,9 @@ a.mobile_link:hover {
   transform: scale(1);
 }
 
-.link-button_active {
+.link-button_active, .link-button_active:hover {
   border: 1px solid #fff;
   color: #fff;
-  box-shadow: 0 0 0 2px #fff;
   opacity: 1;
 }
 
