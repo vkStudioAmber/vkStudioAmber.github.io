@@ -222,6 +222,13 @@ a.mobile_link:hover {
   transform: scale(1);
 }
 
+.link-button_active {
+  border: 1px solid #fff;
+  color: #fff;
+  box-shadow: 0 0 0 2px #fff;
+  opacity: 1;
+}
+
 #player_container {
   position: relative;
   animation: fadeinSimple .5s 1 ease-out;
