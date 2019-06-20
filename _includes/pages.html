@@ -5,12 +5,12 @@
     {% if paginator.previous_page %}
     <a class="link-button" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
     {% else %}
-    <span class="link-button">&laquo; Prev</span>
+    <span class="link-button link-button_disabled ">&laquo; Prev</span>
     {% endif %}
     
     {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
-    <span class="link-button" class="webjeda">{{ page }}</span>
+    <span class="link-button link-button_disabled ">{{ page }}</span>
     {% elsif page == 1 %}
     <a class="link-button" href="/">{{ page }}</a>
     {% else %}
@@ -21,7 +21,7 @@
     {% if paginator.next_page %}
     <a class="link-button" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
     {% else %}
-    <span class="link-button">Next &raquo;</span>
+    <span class="link-button link-button_disabled">Next &raquo;</span>
     {% endif %}
     
 </div>
