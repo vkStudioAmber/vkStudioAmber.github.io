@@ -3,9 +3,9 @@
 <div class="pagination"> 
     
     {% if paginator.previous_page %}
-    <a class="link-button" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    <a class="link-button" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Назад</a>
     {% else %}
-    <span class="link-button link-button_disabled">&laquo; Prev</span>
+    <span class="link-button link-button_disabled">&laquo; Назад</span>
     {% endif %}
     
     {% for page in (1..paginator.total_pages) %}
@@ -19,9 +19,9 @@
     {% endfor %}
     
     {% if paginator.next_page %}
-    <a class="link-button" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    <a class="link-button" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Вперёд &raquo;</a>
     {% else %}
-    <span class="link-button link-button_disabled">Next &raquo;</span>
+    <span class="link-button link-button_disabled">Вперёд &raquo;</span>
     {% endif %}
     
 </div>
