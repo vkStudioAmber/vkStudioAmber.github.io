@@ -7,7 +7,7 @@ exclude:
   - LICENSE
 
 # pages
-paginate: 4
+paginate: 10
 paginate_path: "/page-:num/"
 
 # Build settings
