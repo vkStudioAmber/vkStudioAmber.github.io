@@ -30,6 +30,7 @@ function getPlayer (type, episode){
     selPlayCont.appendChild(selPlayBx);
     selPlayEl = document.createElement('select');
     selPlayEl.classList.add("select-button__select");
+    selPlayEl.classList.add("video-select__select");
     selPlayBx.appendChild(selPlayEl);
     selPlayEl.addEventListener('change',function(){ 
         getPlayer(players[this.selectedIndex]);
@@ -55,6 +56,7 @@ function getPlayer (type, episode){
     selPlayCont.appendChild(selPlayBx);
     selPlayEl = document.createElement('select');
     selPlayEl.classList.add("select-button__select");
+    selPlayEl.classList.add("video-select__select");
     selPlayBx.appendChild(selPlayEl);
     selPlayEl.addEventListener('change',function(){ 
         getPlayer(type, this.selectedIndex);
