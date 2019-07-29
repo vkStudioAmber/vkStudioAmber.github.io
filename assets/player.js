@@ -21,7 +21,16 @@ function getPlayer (type, episode){
         playerEl.removeChild(playerEl.firstChild);
     }
     // make new selection 1
+    selPlayBx = document.createElement('span');
+    selPlayBx.classList.add("select-button");
+    selPlayBx.classList.add("video-select__select-button");
+    selPlayBx.classList.add("video-select__select-button_episode");
+    selPlayCont = document.createElement('div');
+    selPlayCont.classList.add("video-select__select-container");
+    selPlayCont.appendChild(selPlayBx);
     selPlayEl = document.createElement('select');
+    selPlayEl.classList.add("select-button__select");
+    selPlayBx.appendChild(selPlayEl);
     selPlayEl.addEventListener('change',function(){ 
         getPlayer(players[this.selectedIndex]);
         historyState(players[this.selectedIndex], 1);
@@ -35,9 +44,18 @@ function getPlayer (type, episode){
         }
         selPlayEl.appendChild(optPlayEl);
     }
-    selectEl.appendChild(selPlayEl);
+    selectEl.appendChild(selPlayCont);
     // make new selection 2
+    selPlayBx = document.createElement('span');
+    selPlayBx.classList.add("select-button");
+    selPlayBx.classList.add("video-select__select-button");
+    selPlayBx.classList.add("video-select__select-button_episode");
+    selPlayCont = document.createElement('div');
+    selPlayCont.classList.add("video-select__select-container");
+    selPlayCont.appendChild(selPlayBx);
     selPlayEl = document.createElement('select');
+    selPlayEl.classList.add("select-button__select");
+    selPlayBx.appendChild(selPlayEl);
     selPlayEl.addEventListener('change',function(){ 
         getPlayer(type, this.selectedIndex);
         historyState(type, this.selectedIndex+1);
@@ -51,7 +69,7 @@ function getPlayer (type, episode){
         }
         selPlayEl.appendChild(optPlayEl);
     }
-    selectEl.appendChild(selPlayEl);
+    selectEl.appendChild(selPlayCont);
     // next - prev
     var nextEpBtn = document.querySelector('.video-select__link_next');
     var prevEpBtn = document.querySelector('.video-select__link_prev');

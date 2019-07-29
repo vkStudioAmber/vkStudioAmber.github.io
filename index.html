@@ -8,7 +8,7 @@ layout:   default
 <div class="post-container post-container_content">
     {% for post in paginator.posts %}
     <div class="post-container__post post">
-        <a class="post__mobile-link" href="{{ post.url }}"></a>
+        <a class="post__mobile-link" href="{{ post.url }}" tabIndex="-1"></a>
         <div class="post__poster-cell">
             <a class="post__poster-link" href="{{ post.url }}">
                 <img class="post__poster" src="/assets/posters/{{ post.poster }}" alt="" />
