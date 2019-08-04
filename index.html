@@ -10,13 +10,13 @@ layout:   default
     <div class="post-container__post post">
         <a class="post__mobile-link" href="{{ post.url }}" tabIndex="-1"></a>
         <div class="post__poster-cell">
-            <a class="link post__poster-link" href="{{ post.url }}">
+            <a class="link post__poster-link" tabIndex="-1" href="{{ post.url }}">
                 <img class="post__poster" src="/assets/posters/{{ post.poster }}" alt="" />
             </a>
         </div>
         <dl class="post__details">
             <dt class="post__title">
-                <a class="link" href="{{ post.url }}">{{ post.title }}</a>
+                <a class="link post__main-link" href="{{ post.url }}">{{ post.title }}</a>
             </dt>
             <dd class="post__title-jp">
                 <span>{{ post.title_jp }}</span>

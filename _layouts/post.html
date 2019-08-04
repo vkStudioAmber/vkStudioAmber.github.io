@@ -1,13 +1,18 @@
 {% include head.html %}
 <header id="mainHeader" class="page-header">
     {% if page.url != "/" %}
-    <a class="page-header__homelink homelink"  tabindex="100" href="/"></a>
+	    <h1 class="page-header__logo logo logo--withlink">
+	        <a title="На главную" class="page-header__homelink logo__link" tabindex="100" href="/">Amber</a>
+	    </h1>
+    {% else %}
+	    <h1 class="page-header__logo logo">
+	        Amber
+	    </h1>
     {% endif %}
-    <h1 class="page-header__logo logo">Amber</h1>
     <p class="page-header__logotext logotext">Студия профессионального озвучивания</p>
 </header>
-<div class="page-content main_container">
+<article class="page-content main_container">
     {{ content }}
     {% include post-content.html %}
-</div>
+</article>
 {% include footer.html %}
