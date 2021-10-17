@@ -1,1 +1,1 @@
-jekyll serve 
+jekyll s
