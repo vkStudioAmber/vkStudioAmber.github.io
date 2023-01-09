@@ -22,7 +22,13 @@ layout:   default
                 <span>{{ post.title_jp }}</span>
             </dd>
             <dd class="post__episodes">
-                <span>{% if post.title_jp != "Pocket Monsters (2019)"%}Готово серий: <b>{{ post.episodes }}{% else %}Только 132-я серия{% endif %}</b></span>
+                <span>
+                    {% if post.episodes_text %}
+                        {{ post.episodes_text }}
+                    {% else %}
+                        Готово серий: <b>{{ post.episodes }}</b>
+                    {% endif %}
+                </span>
             </dd>
             <dd class="post__description">
                 {{ post.description }}
