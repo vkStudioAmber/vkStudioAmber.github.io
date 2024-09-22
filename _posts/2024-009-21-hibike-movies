@@ -1,0 +1,26 @@
+---
+layout:   post
+title:    "Звучи! Эуфониум! Фильмы"
+title_jp: "Hibike! Euphonium Movies"
+poster:   hibike_movies.jpg
+episodes_text: "Фильм"
+episodes: "1"
+genres:
+  - музыка
+  - школа
+  - драма
+year: 2016-2019
+description: >-
+  <p>Компиляция двух сезонов в виде полнометражных фильмов с завершающим ключевую историю фильмом.</p>
+---
+
+<script>
+    var series = {
+        kodik: [
+            { "title": "1-й фильм",      "url": "//anivod.com/uv/601899/bc6b2a8eed6e60a42464/720p" },
+            { "title": "2-й фильм",      "url": "//anivod.com/uv/601900/26789ac8222b79635b04/720p" },
+            { "title": "3-й фильм",      "url": "//anivod.com/uv/601901/e1f77c564ffa0c251979/720p" },
+        ],
+
+    };
+</script>
