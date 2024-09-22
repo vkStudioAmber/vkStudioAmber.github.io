@@ -1,0 +1,24 @@
+---
+layout:   post
+title:    "Звучи! Эуфониум! Соревнование ансамблей "
+title_jp: "Hibike! Euphonium: Ensemble Contest-hen"
+poster:   hibike_contest_hen.jpg
+episodes_text: "Фильм"
+episodes: "1"
+genres:
+  - музыка
+  - школа
+  - драма
+year: 2023
+description: >-
+  <p>Связующий второй и третий сезоны полнометражный фильм.</p>
+---
+
+<script>
+    var series = {
+        kodik: [
+            { "title": "фильм",      "url": "//anivod.com/uv/601903/5c6a24b6b78780fc7bb7/720p" },
+        ],
+
+    };
+</script>
